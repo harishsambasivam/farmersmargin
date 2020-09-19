@@ -1,5 +1,5 @@
 
-#FrontEnd
+# FrontEnd
 
 `npm start` to start server on port 3000
 
@@ -20,7 +20,7 @@ We are using `generate-react-cli` to generate components
    👉 for pages
   
 
-#Backend
+# Backend
 
 `npm start` to start server on port 5500
 
