@@ -2,7 +2,8 @@
 
 - [x] [React Style Guides by AirBnb](https://github.com/airbnb/javascript/tree/master/react#naming)
 - [x] [The Art of Shit Code](https://github.com/trekhleb/state-of-the-art-shitcode)
-- [x] [Clean Code Practises](https://github.com/ryanmcdermott/clean-code-javascript)
+- [x] [Clean Code Practises](https://github.com/ryanmcdermott/clean-code-javascript)            
+- [x] [Airbnb JS Style Guide](https://github.com/airbnb/javascript/blob/master/README.md)
 
 `npm start` to start server on port 3000
 
@@ -37,5 +38,14 @@ We are using `generate-react-cli` to generate components
 ```
 
 # Backend
-- [x] [NodeJS Best Practices](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.md)                        
+- [x] [NodeJS Best Practices](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.md)                                
+
 `npm start` to start server on port 5500
+
+```
+📁 components
+  📁 farm
+      - index.js
+      - farmController.js
+      - farm.test.js
+```
