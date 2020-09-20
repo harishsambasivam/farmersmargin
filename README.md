@@ -17,7 +17,7 @@ We are using `generate-react-cli` to generate components
 
 ```
    npx generate-react-cli component SearchBar
-   npx generate-react-cli component HomePage --type=page
+   npx generate-react-cli component Home --type=page
    npx generate-react-cli component Jumbotron --type=layout
 ```
 
