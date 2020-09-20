@@ -7,14 +7,18 @@
   
 📁 contexts for contexts
    
-📁 pages for pages
+📁 pages for pages        
+
+📁 layouts for layouts
 
 ### Creating Components
 
 We are using `generate-react-cli` to generate components
 
 ```
-   npx generate-react-cli component <component_name>
+   npx generate-react-cli component SearchBar
+   npx generate-react-cli component HomePage --type=page
+   npx generate-react-cli component Jumbotron --type=layout
 ```
 
 ✅ Name the component,pages,contexts in PascalCase when generating using generate-react-cli                            
