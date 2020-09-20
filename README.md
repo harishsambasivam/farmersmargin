@@ -37,5 +37,5 @@ We are using `generate-react-cli` to generate components
 ```
 
 # Backend
-
+- [x] [NodeJS Best Practices](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.md)
 `npm start` to start server on port 5500
