@@ -47,5 +47,11 @@ We are using `generate-react-cli` to generate components
   📁 farm
       - index.js
       - farmController.js
-      - farm.test.js
+      - farmModel.js   
+      - farmRouter.js   
+      - farm.test.js 
+      - utils.js*  
 ```
+📁 scripts for scripts           
+📁 config for config files               
+
