@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { getFields, addField, helloWorld } = require("./fieldController");
+const { getFields, addField, helloWorld } = require("./field_controller");
 
 router.route("/").post(addField);
 router.route("/").get(helloWorld);

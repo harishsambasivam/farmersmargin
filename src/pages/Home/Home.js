@@ -1,15 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './Home.scss';
+import React from "react";
+import "./Home.scss";
+import Map from "../../components/Map/Map";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import { SidenavProvider } from "../../contexts/sidenavContext";
 
-const Home = () => (
-  <div className="Home" data-testid="Home">
-    Home Component
-  </div>
-);
-
-Home.propTypes = {};
-
-Home.defaultProps = {};
+const Home = () => {
+  return (
+    <div className="Home" data-testid="Home">
+      <SidenavProvider>
+        <Map />
+        <SearchBar />
+      </SidenavProvider>
+    </div>
+  );
+};
 
 export default Home;

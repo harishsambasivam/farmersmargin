@@ -1,1 +1,11 @@
-.SearchBar {}
+.searchbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  width: 50vw;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
+}

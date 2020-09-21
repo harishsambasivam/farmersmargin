@@ -1,4 +1,4 @@
-const Fields = require("./fieldModel");
+const Fields = require("./field_model");
 const { getGeoPoints } = require("./utils");
 
 module.exports.getFields = async (req, res, next) => {
