@@ -38,7 +38,7 @@ module.exports.addField = async (req, res, next) => {
     const field = await Fields.create(req.body);
     console.log("data added");
     return res.status(200).send({
-      sucess: true,
+      success: true,
       data: field,
     });
   } catch (err) {

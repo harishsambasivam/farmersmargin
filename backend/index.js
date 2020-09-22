@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const server = express();
 const cors = require("cors");
 const fieldRouter = require("./components/field");
+const usersRouter = require("./components/user");
 const accessTokenRouter = require("./components/access_token");
 
 const dotenv = require("dotenv");
@@ -18,9 +19,9 @@ const corsOptions = {
 server.use(cors(corsOptions));
 server.use(bodyParser.json());
 
-server.listen(process.env.PORT, () =>
-  console.log(`server started on port ${process.env.port}`)
-);
+const PORT = process.env.PORT || 4000;
+server.listen(PORT, () => console.log(`server started on port ${PORT}`));
 
+server.use("/", usersRouter);
 server.use("/fields", fieldRouter);
 server.use("/access_token", accessTokenRouter);
