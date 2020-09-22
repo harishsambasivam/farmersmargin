@@ -1,22 +1,26 @@
 const mongoose = require("mongoose");
-// const Float = require("mongoose-float").loadType(mongoose);
+
 const FarmSchema = new mongoose.Schema({
+  farmid: {
+    type: String,
+    required: true,
+    unique: true,
+    trim: true,
+    maxlength: [10, "Field ID must be less than 10 characters long"],
+  },
   location: {
     type: {
       type: String,
-      enum: ["Polygon"],
-      required: true,
+      enum: ["Point"],
     },
     coordinates: {
-      type: [[[Number]]],
-      required: true,
+      type: [Number],
     },
-  },
-  farm: {
-    type: String,
+    formattedAddress: String,
   },
   username: {
     type: String,
+    unique: true,
     maxlength: [16, "Username must be less than 16 characters long"],
   },
   createdAt: {
@@ -27,13 +31,8 @@ const FarmSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  color: {
-    type: String,
-  },
-  crop: {
-    type: String,
-  },
 });
 
 FarmSchema.index({ location: "2dsphere" });
-module.exports = mongoose.model("Farm", FarmSchema);
+
+module.exports = mongoose.model("Farms", FarmSchema);

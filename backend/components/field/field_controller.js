@@ -20,16 +20,10 @@ module.exports.getFields = async (req, res, next) => {
       { $skip: 0 },
       { $limit: 20 },
     ]);
-    return res.status(200).send({
-      success: true,
-      count: fields.length,
-      data: fields,
-    });
+    return res.status(200).send(fields);
   } catch (err) {
     console.log(err);
-    res.status(501).json({
-      error: "Server error",
-    });
+    res.status(501).json(err);
   }
 };
 
@@ -37,16 +31,11 @@ module.exports.addField = async (req, res, next) => {
   try {
     const field = await Fields.create(req.body);
     console.log("data added");
-    return res.status(200).send({
-      success: true,
-      data: field,
-    });
+    return res.status(200).send(field);
   } catch (err) {
     console.log(err);
     if (err.code === 11000) {
-      return res.status(400).json({
-        error: "field Already exists",
-      });
+      return res.status(400).json(err);
     }
     res.status(501).json({
       error: "Server error",

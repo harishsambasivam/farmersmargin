@@ -4,6 +4,7 @@ const server = express();
 const cors = require("cors");
 const fieldRouter = require("./components/field");
 const usersRouter = require("./components/user");
+const farmRouter = require("./components/farm");
 const accessTokenRouter = require("./components/access_token");
 
 const dotenv = require("dotenv");
@@ -24,4 +25,5 @@ server.listen(PORT, () => console.log(`server started on port ${PORT}`));
 
 server.use("/", usersRouter);
 server.use("/fields", fieldRouter);
+server.use("/farms", farmRouter);
 server.use("/access_token", accessTokenRouter);
