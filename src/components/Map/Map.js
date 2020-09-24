@@ -1,45 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Map.scss";
-import mapboxgl from "mapbox-gl";
-import MapboxDraw from "@mapbox/mapbox-gl-draw";
-import { useFetch } from "../../custom_hooks/useFetch";
+// import {}
 
-const drawMap = function (
-  accessToken,
-  latitude,
-  longitude,
-  zoom,
-  mapContainerRef
-) {
-  mapboxgl.accessToken = accessToken;
-  const map = new mapboxgl.Map({
-    container: mapContainerRef.current,
-    style: "mapbox://styles/mapbox/streets-v11",
-    center: [longitude, latitude],
-    zoom: zoom,
-  });
-  const Draw = new MapboxDraw({
-    displayControlsDefault: false,
-    controls: {
-      polygon: true,
-      trash: true,
-    },
-  });
-  map.addControl(new mapboxgl.NavigationControl(), "bottom-left");
-  map.addControl(Draw, "bottom-right");
-  map.on("draw.create", (e) => console.log(e));
-};
-
-const getPreciseLocation = () => {
-  return new Promise(function (resolve, reject) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      resolve({
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
-      });
-    });
-  });
-};
+import { getPreciseLocation, drawMap, fetchAccessToken } from "./utils";
 
 const Map = () => {
   const [accessToken, setAccessToken] = useState("");
@@ -48,20 +11,14 @@ const Map = () => {
     latitude: null,
     longitude: null,
   });
+
+  const [farms, setFarms] = useState({});
+  const [fields, setFields] = useState({});
+
   const mapContainerRef = useRef();
 
   useEffect(() => {
-    (async function fetchData() {
-      try {
-        const response = await fetch(
-          "http://localhost:5500/access_token/mapbox"
-        );
-        const { access_token } = await response.json();
-        setAccessToken(access_token);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
+    fetchAccessToken(setAccessToken);
   }, [setAccessToken]);
 
   useEffect(() => {
