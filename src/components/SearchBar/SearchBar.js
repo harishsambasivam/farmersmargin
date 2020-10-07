@@ -8,7 +8,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import DirectionsIcon from "@material-ui/icons/Directions";
 import SideNav from "../SideNav/SideNav";
-import { SidenavContext } from "../../contexts/sidenavContext";
+import { SidenavContext } from "../../providers/sidenavProvider";
 import "./SearchBar.scss";
 
 const useStyles = makeStyles((theme) => ({

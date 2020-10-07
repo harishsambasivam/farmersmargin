@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.scss";
 import Map from "../../components/Map/Map";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import { SidenavProvider } from "../../contexts/sidenavContext";
+import { SidenavProvider } from "../../providers/sidenavProvider";
 
 const Home = () => {
   return (

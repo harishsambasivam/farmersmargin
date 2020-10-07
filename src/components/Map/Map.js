@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Map.scss";
-// import {}
 
 import { getPreciseLocation, drawMap, fetchAccessToken } from "./utils";
 
